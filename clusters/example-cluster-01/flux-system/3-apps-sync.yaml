@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apps-sync
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./clusters/example-cluster-01/apps
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  dependsOn:
+    - name: databases-sync
