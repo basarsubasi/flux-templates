@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quickpizza
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quickpizza
+  template:
+    metadata:
+      labels:
+        app: quickpizza
+    spec:
+      containers:
+      - name: quickpizza
+        image: ghcr.io/grafana/quickpizza:latest
+        ports:
+        - containerPort: 3333
+          name: http
+        env:
+        - name: QUICKPIZZA_FRONTEND_URL
+          value: ""

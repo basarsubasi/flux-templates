@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vault
+  namespace: databases
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: vault
+      version: "0.27.x"
+      sourceRef:
+        kind: HelmRepository
+        name: hashicorp
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    # Example minimal dev values
+    server:
+      dev:
+        enabled: true

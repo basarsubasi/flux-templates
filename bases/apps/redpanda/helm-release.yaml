@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: redpanda
+  namespace: databases
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: redpanda
+      version: "5.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: redpanda
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    # Example minimal dev values
+    statefulset:
+      replicas: 1
+    resources:
+      cpu:
+        cores: 1
+      memory:
+        container:
+          max: 2Gi

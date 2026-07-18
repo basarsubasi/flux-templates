@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: consul
+  namespace: databases
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: consul
+      version: "1.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: hashicorp
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    # Example minimal values
+    global:
+      name: consul
+    server:
+      replicas: 1
