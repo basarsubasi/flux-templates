@@ -20,6 +20,11 @@ spec:
       enabled: true
     hubble:
       relay:
-        enabled: true
+        enabled: false
       ui:
-        enabled: true
+        enabled: false
+    # Enable Cilium Service Mesh mTLS/SPIFFE
+    authentication:
+      mutual:
+        spiffe:
+          enabled: false
