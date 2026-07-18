@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: consul
-  namespace: databases
+  namespace: consul
 spec:
   interval: 15m
   chart:
