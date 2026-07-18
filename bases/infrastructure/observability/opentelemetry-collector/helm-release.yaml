@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: opentelemetry-collector
+  namespace: monitoring
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: opentelemetry-collector
+      version: "0.87.x"
+      sourceRef:
+        kind: HelmRepository
+        name: open-telemetry
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    # Example values for a DaemonSet collector
+    mode: daemonset
