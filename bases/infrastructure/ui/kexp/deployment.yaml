@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kexp
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kexp
+  template:
+    metadata:
+      labels:
+        app: kexp
+    spec:
+      serviceAccountName: kexp
+      containers:
+      - name: kexp
+        image: debian:bullseye-slim
+        command:
+        - /bin/sh
+        - -c
+        - |
+          apt-get update && apt-get install -y curl tar ca-certificates
+          curl -Ls https://github.com/iximiuz/kexp/releases/latest/download/kexp_linux_amd64.tar.gz | tar xvz
+          mv kexp /usr/local/bin/
+          kexp --host 0.0.0.0 --port 8090
+        ports:
+        - containerPort: 8090
+          name: http

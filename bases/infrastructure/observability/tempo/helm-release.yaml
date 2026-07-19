@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tempo
+  namespace: monitoring
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: tempo
+      version: "1.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    # Example minimal dev values
+    traces:
+      jaeger:
+        grpc:
+          enabled: true
+        thriftHttp:
+          enabled: true
+      zipkin:
+        enabled: true
+      otlp:
+        http:
+          enabled: true
+        grpc:
+          enabled: true
