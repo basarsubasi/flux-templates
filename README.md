@@ -9,9 +9,11 @@ This template repository is designed to be paired with the **[GitOps Bootstrap T
 The TUI allows you to:
 - Instantly browse this template catalog in a clean tree explorer.
 - Selectively enable or disable specific components (like choosing Postgres over MongoDB, or adding Observability tools).
+- **Component Rules Engine:** The TUI parses `bases/rules.yaml` in this repository to automatically enforce component dependencies (e.g., Database CRs auto-selecting their Operators) and mutual exclusivity (e.g., blocking `grafana` if `victoria-metrics` is selected).
 - Customize default Helm chart values on the fly.
-- Automatically generate the final GitOps repository structure.
-- Bootstrap Flux CD and spin up a local `git daemon` to synchronize your cluster instantly.
+- Automatically generate the final GitOps repository structure as a flat, monolithic Kustomize build.
+- **Global Deduplication:** The TUI dynamically parses the required namespaces and `HelmRepository` definitions from your selected templates, strips duplicates, and hoists them to a global layer to absolutely prevent Kustomize resource ID collisions.
+- Bootstrap Flux CD securely using standard Git provider integrations.
 
 ## Current Catalog
 

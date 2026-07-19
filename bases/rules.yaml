@@ -1,0 +1,37 @@
+rules:
+  - component: databases/cockroachdb
+    requires:
+      - infrastructure/controllers/cockroach-operator
+  - component: databases/postgres
+    requires:
+      - infrastructure/controllers/postgres-operator
+  - component: databases/clickhouse
+    requires:
+      - infrastructure/controllers/clickhouse-operator
+  - component: databases/kafka
+    requires:
+      - infrastructure/controllers/strimzi-kafka-operator
+  - component: databases/mongodb
+    requires:
+      - infrastructure/controllers/mongodb-operator
+  - component: databases/elasticsearch
+    requires:
+      - infrastructure/controllers/elastic-operator
+  - component: infrastructure/observability/victoria-metrics-k8s-stack
+    conflicts:
+      - infrastructure/observability/grafana
+      - infrastructure/observability/prometheus
+      - infrastructure/observability/alertmanager
+      - infrastructure/observability/kube-prometheus-stack
+  - component: infrastructure/observability/kube-prometheus-stack
+    conflicts:
+      - infrastructure/observability/grafana
+      - infrastructure/observability/prometheus
+      - infrastructure/observability/alertmanager
+      - infrastructure/observability/victoria-metrics-k8s-stack
+  - component: infrastructure/networking/istio
+    conflicts:
+      - infrastructure/networking/consul
+  - component: infrastructure/networking/consul
+    conflicts:
+      - infrastructure/networking/istio
