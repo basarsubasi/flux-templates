@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: base
-      version: "1.22.x"
+      version: "1.x.x"
       sourceRef:
         kind: HelmRepository
         name: istio

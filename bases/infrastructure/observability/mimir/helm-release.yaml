@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: mimir-distributed
-      version: "5.x.x"
+      version: "6.x.x"
       sourceRef:
         kind: HelmRepository
         name: grafana
