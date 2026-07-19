@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: cluster-infrastructure
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: ./clusters/example-cluster-01/infrastructure
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
