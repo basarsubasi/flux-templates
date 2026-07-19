@@ -13,6 +13,8 @@ spec:
         kind: HelmRepository
         name: cilium
         namespace: flux-system
+  install:
+    createNamespace: true
   values:
     # Example minimal values
     kubeProxyReplacement: true
