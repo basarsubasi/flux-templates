@@ -1,0 +1,189 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: bitnami
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.bitnami.com/bitnami
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: redpanda
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.redpanda.com
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: backstage
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://backstage.github.io/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: headlamp
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://headlamp-k8s.github.io/headlamp/
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: jetstack
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.jetstack.io
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: cilium
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://helm.cilium.io
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: hashicorp
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://helm.releases.hashicorp.com
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: istio
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://istio-release.storage.googleapis.com/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: open-telemetry
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://open-telemetry.github.io/opentelemetry-helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: grafana
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://grafana.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: prometheus-community
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://prometheus-community.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: elastic
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://helm.elastic.co
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: victoria-metrics
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://victoriametrics.github.io/helm-charts/
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: jaegertracing
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://jaegertracing.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: rook-release
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.rook.io/release
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: cockroachdb
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.cockroachdb.com/
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kedacore
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://kedacore.github.io/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: altinity
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://helm.altinity.com
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: strimzi
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://strimzi.io/charts/
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: cloudnative-pg
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://cloudnative-pg.github.io/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: mongodb
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://mongodb.github.io/helm-charts

@@ -15,11 +15,24 @@ The TUI allows you to:
 
 ## Current Catalog
 
-The repository is structured around Kustomize `bases/` representing reusable stacks, and `clusters/` (the final generated deployment configurations). 
-
 Here is an overview of the current supported bases in the catalog:
 
-###  Apps
+## Directory Structure
+```text
+.
+├── bases/
+│   ├── repositories/       # Centralized HelmRepository definitions
+│   ├── infrastructure/     # Core platform controllers, networking, security
+│   ├── databases/          # Data stores and caching solutions
+│   └── apps/               # Example applications and workloads
+└── clusters/
+    └── example-cluster-01/ # Pre-configured example of a fully generated cluster
+```
+
+### Repositories (Centralized)
+- Centralized `HelmRepository` declarations for all components below (Deduplicated automatically to prevent Kustomize build collisions).
+
+### Apps
 - **Grafana Quickpizza**: A demo microservices application for Grafana observability.
 - **OpenTelemetry Demo**: The official OpenTelemetry astronomy shop demo app.
 
