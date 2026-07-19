@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cockroach-operator
+  namespace: cockroach-operator-system
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: cockroach-operator
+      version: "2.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: cockroachdb
+        namespace: flux-system
+  install:
+    createNamespace: true
