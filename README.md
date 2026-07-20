@@ -4,7 +4,7 @@ This repository contains a curated catalog of Flux CD templates and Kubernetes m
 
 ## The GitOps Bootstrap TUI
 
-This template repository is designed to be paired with the **[GitOps Bootstrap TUI](https://github.com/basarsubasi/gitops-tui)**, a fast, interactive terminal user interface built in Rust. 
+This template repository is designed to be paired with the **[GitOps Bootstrap TUI](https://github.com/basarsubasi/gitops-bootstrap-tui)**, a fast, interactive terminal user interface built in Rust. 
 
 The TUI allows you to:
 - Instantly browse this template catalog in a clean tree explorer.
